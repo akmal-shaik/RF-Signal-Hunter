@@ -63,15 +63,9 @@ The architecture separates the instrument into independently testable subsystems
                │ analysis     │
                └──────────────┘
 
+```
 
----
-
-# Task 3 — Understand each subsystem
-
-Add this architecture table:
-
-```markdown
-## 3. Subsystem Responsibilities
+## 3. System Block Diagram
 
 | ID | Subsystem | Input | Output | Responsibility |
 |---|---|---|---|---|
