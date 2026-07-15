@@ -65,3 +65,68 @@ Confirm that the displayed relative scale responds consistently to controlled de
 
 **Status:**  
 Accepted.
+
+## DDL-004 — Envelope-Detection Architecture
+
+**Decision:**  
+Use an analogue RF envelope detector before the ESP32 ADC.
+
+**Alternatives considered:**
+
+- Directly sample RF using the ESP32 ADC
+- Use a software-defined radio
+- Use an analogue envelope detector
+- Use a dedicated frequency-selective receiver
+
+**Selected option:**  
+Analogue envelope detector.
+
+**Reasoning:**  
+Most RF signals of interest operate far beyond the practical sampling bandwidth of the ESP32 ADC. An envelope detector converts the high-frequency signal into a slowly varying voltage that the ESP32 can measure.
+
+**Trade-offs:**  
+The detector loses frequency and protocol information. Its output represents combined broadband activity rather than a spectrum.
+
+**Validation required:**  
+Demonstrate that controlled RF activity produces a measurable detector-output change.
+
+**Status:**  
+Accepted at architecture level; circuit implementation not yet frozen.
+
+---
+
+## DDL-005 — Modular Subsystem Validation
+
+**Decision:**  
+The RF detector, analogue conditioning, ADC acquisition, digital processing and display shall be tested separately before integration.
+
+**Reasoning:**  
+Testing subsystems independently makes faults easier to isolate and prevents several unverified sections from failing simultaneously.
+
+**Trade-offs:**  
+Development takes longer than assembling the complete system immediately, but produces stronger evidence and reduces debugging uncertainty.
+
+**Validation required:**  
+A documented test procedure and pass/fail result for every subsystem.
+
+**Status:**  
+Accepted.
+
+---
+
+## DDL-006 — Serial Data Logging
+
+**Decision:**  
+The ESP32 shall output both raw and processed measurement values over USB serial.
+
+**Reasoning:**  
+Raw data is needed to evaluate noise, filtering, repeatability and processing performance. Display-only testing would hide important measurement behaviour.
+
+**Trade-offs:**  
+Firmware and data formatting become slightly more complex.
+
+**Validation required:**  
+Capture a timestamped dataset and successfully analyse it using Python.
+
+**Status:**  
+Accepted.

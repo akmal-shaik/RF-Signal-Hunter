@@ -63,3 +63,56 @@ These values will be determined through architecture analysis and experimental t
 ### Next controlled action
 
 Review and approve the v0.1 requirements before beginning the v0.2 system architecture.
+
+## Session 002 — System Architecture
+
+**Project version:** v0.2 draft
+
+### Objective
+
+Define the complete high-level architecture and divide the instrument into independently testable subsystems.
+
+### Work completed
+
+- Created the system block diagram.
+- Defined the responsibilities of each subsystem.
+- Defined preliminary subsystem interfaces.
+- Selected an envelope-detection architecture.
+- Established a subsystem validation order.
+- Began an inventory of available hardware.
+
+### Engineering reasoning
+
+The ESP32 cannot directly sample the intended RF carrier frequencies using its normal ADC. The RF signal must therefore be converted into a low-frequency envelope before digital acquisition.
+
+The architecture separates RF detection, analogue conditioning, ADC acquisition, processing and display so that each function can be validated independently.
+
+### Testing
+
+No electrical testing was performed during this session.
+
+The architecture was reviewed against:
+
+- Project requirements
+- ESP32 compatibility
+- Breadboard testability
+- Final handheld integration
+- Documentation requirements
+- Scope limitations
+
+### Results
+
+A preliminary modular architecture was produced.
+
+Exact circuit topology, detector diode, antenna design, display interface and power arrangement remain TBD pending hardware inventory and component evaluation.
+
+### Lessons learned
+
+- The RF carrier and its envelope are different signals.
+- A detector can make high-frequency activity measurable without preserving frequency information.
+- Defining electrical interfaces early reduces integration risk.
+- Raw data logging is essential for validating signal processing.
+
+### Next controlled action
+
+Complete the hardware inventory and select the preliminary components for the first controlled ESP32 ADC experiment.
