@@ -1,0 +1,17 @@
+RF_SIGNAL_HUNTER_BOOT
+test_id=TEST-ESP-001
+firmware_version=0.3.0-dev
+heartbeat_count,uptime_ms
+1,2511
+2,3511
+3,4511
+4,5511
+5,6511
+6,7511
+7,8511
+8,9511
+9,10511
+10,11511
+11,12511
+12,13511
+13,14511

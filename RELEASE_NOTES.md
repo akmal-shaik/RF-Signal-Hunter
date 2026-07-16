@@ -73,3 +73,25 @@ Draft — awaiting requirements review and approval.
 ### Release Status
 
 Draft — awaiting hardware inventory and architecture review.
+
+## v0.3 — Breadboard Prototype
+
+### Status
+
+In progress.
+
+### Completed
+
+- PlatformIO firmware environment created
+- ESP32 board configuration recorded
+- Minimal firmware application implemented
+- USB upload path validated
+- Serial heartbeat implemented
+- ESP32 bring-up test documented
+
+### Next Validation
+
+- Select a safe ESP32 ADC pin
+- Create a controlled voltage-divider test source
+- Measure applied voltages independently
+- Compare measured voltage with ESP32 ADC readings

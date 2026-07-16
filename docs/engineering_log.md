@@ -116,3 +116,86 @@ Exact circuit topology, detector diode, antenna design, display interface and po
 ### Next controlled action
 
 Complete the hardware inventory and select the preliminary components for the first controlled ESP32 ADC experiment.
+
+## Session 003 — Hardware Inventory and Architecture Review
+
+**Project version:** v0.2 draft
+
+### Objective
+
+Identify the hardware already available and determine whether the proposed system architecture can be developed using existing equipment.
+
+### Work completed
+
+- Inspected the available ESP32 development board.
+- Recorded available prototyping and measurement equipment.
+- Identified available display, diode, resistor and capacitor components where possible.
+- Created photographic evidence of the starting hardware.
+- Added initial architecture constraints.
+
+### Testing
+
+Only basic visual inspection and previously known operating status were recorded.
+
+No RF detector circuit was constructed and no unverified component was connected to the ESP32.
+
+### Results
+
+The hardware inventory was updated using verified component markings where available.
+
+Unidentified components remain recorded as unknown rather than being assigned assumed specifications.
+
+### Lessons learned
+
+- A component's package appearance is not sufficient evidence of its electrical characteristics.
+- Knowing the exact development-board version is important because ESP32 pin capabilities differ between variants.
+- Hardware selection must account for both electrical function and final-system integration.
+
+### Next controlled action
+
+Review the inventory, confirm the available measurement equipment and approve the v0.2 system architecture before beginning ESP32 bring-up and ADC characterisation.
+
+## Session 004 — ESP32 Bring-Up and Serial Verification
+
+**Project version:** v0.3 draft
+
+### Objective
+
+Validate the firmware development environment, USB programming interface, ESP32 execution and serial data path before beginning ADC experiments.
+
+### Implementation
+
+- Configured PlatformIO for the ESP32 DEVKIT V1.
+- Created a minimal Arduino-framework firmware application.
+- Implemented a timestamped one-second heartbeat.
+- Uploaded the firmware to the selected ESP32 board.
+- Observed output through the serial monitor.
+
+### Testing
+
+TEST-ESP-001 verified:
+
+- Firmware compilation
+- USB upload
+- Program execution
+- Continuous serial output
+- Approximate heartbeat timing
+- Reset behaviour
+- USB reconnection behaviour
+
+### Results
+
+**Overall result:** PASS
+
+COM6 port was used and no anomalys were observed.
+
+### Lessons Learned
+
+- Successful compilation alone does not prove that the hardware executes correctly.
+- A heartbeat provides evidence of continuous firmware operation.
+- Identifying individual physical boards makes later failures and measurements traceable.
+- A known-good serial path will later allow raw ADC measurements to be captured without relying solely on a display.
+
+### Next Controlled Action
+
+Characterise the ESP32 ADC using controlled DC input voltages after TEST-ESP-001 passes.

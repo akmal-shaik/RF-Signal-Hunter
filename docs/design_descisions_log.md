@@ -130,3 +130,29 @@ Capture a timestamped dataset and successfully analyse it using Python.
 
 **Status:**  
 Accepted.
+
+## DDL-007 — Firmware Development Environment
+
+**Decision:**  
+Use PlatformIO in VS Code with the Arduino ESP32 framework.
+
+**Alternatives considered:**
+
+- Arduino IDE
+- PlatformIO with Arduino framework
+- Native ESP-IDF
+
+**Selected option:**  
+PlatformIO with the Arduino framework.
+
+**Reasoning:**  
+PlatformIO stores the board and framework configuration in the repository, supports repeatable builds and integrates with the existing VS Code workflow. The Arduino framework provides sufficiently direct access to the required ESP32 peripherals without introducing the additional complexity of native ESP-IDF.
+
+**Trade-offs:**  
+The Arduino framework abstracts some low-level ESP32 behaviour and offers less direct control than ESP-IDF. That additional control is not currently required by the instrument.
+
+**Validation required:**  
+Successfully build, upload and execute a serial bring-up program on the selected ESP32 board.
+
+**Status:**  
+Accepted pending TEST-ESP-001.
