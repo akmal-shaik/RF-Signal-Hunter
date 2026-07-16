@@ -154,5 +154,5 @@ The Arduino framework abstracts some low-level ESP32 behaviour and offers less d
 **Validation required:**  
 Successfully build, upload and execute a serial bring-up program on the selected ESP32 board.
 
-**Status:**  
-Accepted pending TEST-ESP-001.
+**Status:** 
+Accepted and frozen following successful completion of TEST-ESP-001.

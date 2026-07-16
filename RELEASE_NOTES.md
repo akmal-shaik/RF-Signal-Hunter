@@ -41,7 +41,7 @@
 
 ### Release Status
 
-Draft — awaiting requirements review and approval.
+Approved
 
 ## v0.2 — System Architecture
 
@@ -72,7 +72,7 @@ Draft — awaiting requirements review and approval.
 
 ### Release Status
 
-Draft — awaiting hardware inventory and architecture review.
+Approved
 
 ## v0.3 — Breadboard Prototype
 

@@ -4,6 +4,8 @@
 **Board under test:** ESP32-A  
 **Board model:** ESP32 DEVKIT V1  
 **Firmware version:** 0.3.0-dev
+**Test date:** 16/07/2026
+**Serial port:** COM6
 
 ## Objective
 
@@ -41,8 +43,8 @@ Verify that the firmware toolchain, USB upload interface, ESP32 execution and se
 
 ## Observations
 
-All serial communications test worked as expected and no anamolys or unexpected results observed
+ESP32-A appeared as COM6. Firmware built and uploaded successfully. Thirteen sequential heartbeat messages were captured, with each adjacent timestamp differing by 1000 ms. Resetting and reconnecting the board restored the boot header and heartbeat output. No unexpected resets, corrupted output or communication anomalies were observed.
 
 ## Conclusion
 
-The ESP32-A board and the development toolchain are suitable for subsequent ADC characterisation
+The ESP32-A board and the development toolchain are suitable for subsequent ADC characterisation.

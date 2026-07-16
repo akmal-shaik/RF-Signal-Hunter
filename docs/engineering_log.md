@@ -2,7 +2,7 @@
 
 ## Session 001 — Requirements Definition
 
-**Project version:** v0.1 draft
+**Project version:** v0.1 approved baseline
 
 ### Objective
 
@@ -66,7 +66,7 @@ Review and approve the v0.1 requirements before beginning the v0.2 system archit
 
 ## Session 002 — System Architecture
 
-**Project version:** v0.2 draft
+**Project version:** v0.2 approved at system-architecture level
 
 ### Objective
 
@@ -119,7 +119,7 @@ Complete the hardware inventory and select the preliminary components for the fi
 
 ## Session 003 — Hardware Inventory and Architecture Review
 
-**Project version:** v0.2 draft
+**Project version:** v0.2 approved at system-architecture level
 
 ### Objective
 
@@ -130,7 +130,6 @@ Identify the hardware already available and determine whether the proposed syste
 - Inspected the available ESP32 development board.
 - Recorded available prototyping and measurement equipment.
 - Identified available display, diode, resistor and capacitor components where possible.
-- Created photographic evidence of the starting hardware.
 - Added initial architecture constraints.
 
 ### Testing
@@ -187,7 +186,7 @@ TEST-ESP-001 verified:
 
 **Overall result:** PASS
 
-COM6 port was used and no anomalys were observed.
+COM6 was used and no anomalies were observed.
 
 ### Lessons Learned
 

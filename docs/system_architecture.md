@@ -1,7 +1,9 @@
 # RF Signal Hunter — System Architecture
 
 **Project release:** v0.2  
-**Status:** Draft
+**Status:** Approved at system-architecture level
+
+Detailed subsystem implementations remain subject to experimental validation and are not yet frozen.
 
 ## 1. Architecture Objective
 
@@ -65,7 +67,7 @@ The architecture separates the instrument into independently testable subsystems
 
 ```
 
-## 3. System Block Diagram
+## 3. Subsystem Responsibilities
 
 | ID | Subsystem | Input | Output | Responsibility |
 |---|---|---|---|---|
@@ -120,7 +122,7 @@ The architecture separates the instrument into independently testable subsystems
 
 | Item | Exact model/value | Quantity | Intended possible role | Confirmed working? |
 |---|---|---:|---|---|
-| ESP32 development board | ESP32 DEVKIT V1 | 3 | Processing, ADC and serial output | Not yet tested |
+| ESP32 development board | ESP32 DEVKIT V1 | 3 | Processing, ADC and serial output | ESP32-A verified by TEST-ESP-001; remaining boards untested |
 | Breadboard | Full-size solderless breadboard | 1 | Prototype construction | Yes |
 | Multimeter | TESMEN TM-510 | 1 | Voltage, resistance and continuity testing | Yes |
 | Display module | None currently available | 0 | Final user interface | N/A |
@@ -128,9 +130,19 @@ The architecture separates the instrument into independently testable subsystems
 | Capacitors | Assorted, 100 pF to 10 µF | 2 of each value | Filtering and decoupling | Not individually tested |
 | Resistors | Assorted, 10 Ω to 1 MΩ | 120 total | Biasing, filtering and protection | Not individually tested |
 | Antenna/wire | Jumper wire / hook-up wire | Assorted | RF pickup experiments | Yes |
-| Power source | Laptop USB through micro-USB cable | 1 | Prototype power | Not yet tested with ESP32 |
+| Power source | Laptop USB through micro-USB cable | 1 | Prototype power | Verified with ESP32-A by TEST-ESP-001 |
 
-## 6. Planned Validation Order
+## 6. Architecture Constraints
+
+* The RF carrier shall not be sampled directly by the ESP32 ADC. The analogue front end shall first convert received RF energy into a low-frequency envelope.
+* The ADC interface shall prevent negative voltage and overvoltage from reaching the ESP32.
+* ADC1 shall be preferred so that future Wi-Fi operation does not conflict with ADC acquisition.
+* Raw ADC measurements shall remain available over USB serial for validation and offline analysis.
+* Analogue, firmware and interface subsystems shall be validated independently before complete-system integration.
+* No PCB shall be released until the major analogue and digital subsystems have passed documented breadboard tests.
+* Display and power-system activity shall not be allowed to invalidate analogue measurements through excessive noise or interference.
+
+## 7. Planned Validation Order
 
 1. Verify the ESP32 development board and serial communication.
 2. Characterise the ESP32 ADC using controlled DC voltages.

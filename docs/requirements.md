@@ -1,7 +1,7 @@
 # RF Signal Hunter — Requirements Specification
 
 **Project release:** v0.1  
-**Status:** Draft  
+**Status:** Approved Baseline 
 **Instrument type:** Handheld relative RF activity detector
 
 ---
