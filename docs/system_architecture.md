@@ -120,13 +120,13 @@ The architecture separates the instrument into independently testable subsystems
 
 | Item | Exact model/value | Quantity | Intended possible role | Confirmed working? |
 |---|---|---:|---|---|
-| ESP32 development board | TBD | 1 | Processing, ADC, serial output | TBD |
+| ESP32 development board | ESP32 DEVKITV1 | 3 | Processing, ADC, serial output | TBD |
 | Breadboard | TBD | TBD | Prototype construction | TBD |
-| Multimeter | TBD | 1 | Voltage, resistance and continuity testing | TBD |
+| Multimeter | TESMEN TM-510 | 1 | Voltage, resistance and continuity testing | TBD |
 | Display module | TBD | TBD | User interface | TBD |
-| Diodes | TBD | TBD | RF detector experiments | TBD |
-| Capacitors | TBD | TBD | Filtering and decoupling | TBD |
-| Resistors | TBD | TBD | Biasing, filtering and protection | TBD |
+| Diodes | BAT 46 | 2 | RF detector experiments | TBD |
+| Capacitors | 10 to 100 μF | 2/2 | Filtering and decoupling | TBD |
+| Resistors | 10 to 1M Ω | 120 | Biasing, filtering and protection | TBD |
 | Antenna/wire | TBD | TBD | RF pickup experiments | TBD |
 | Power source | TBD | TBD | Prototype power | TBD |
 
