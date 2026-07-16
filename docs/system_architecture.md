@@ -125,7 +125,7 @@ The architecture separates the instrument into independently testable subsystems
 | Multimeter | TESMEN TM-510 | 1 | Voltage, resistance and continuity testing | TBD |
 | Display module | TBD | TBD | User interface | TBD |
 | Diodes | BAT 46 | 2 | RF detector experiments | TBD |
-| Capacitors | 10 to 100 μF | 2/2 | Filtering and decoupling | TBD |
+| Capacitors | 100 pF to 10 μF | 2/2 | Filtering and decoupling | TBD |
 | Resistors | 10 to 1M Ω | 120 | Biasing, filtering and protection | TBD |
 | Antenna/wire | TBD | TBD | RF pickup experiments | TBD |
 | Power source | TBD | TBD | Prototype power | TBD |
