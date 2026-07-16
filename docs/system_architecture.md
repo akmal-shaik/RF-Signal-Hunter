@@ -120,15 +120,15 @@ The architecture separates the instrument into independently testable subsystems
 
 | Item | Exact model/value | Quantity | Intended possible role | Confirmed working? |
 |---|---|---:|---|---|
-| ESP32 development board | ESP32 DEVKITV1 | 3 | Processing, ADC, serial output | TBD |
-| Breadboard | TBD | TBD | Prototype construction | TBD |
-| Multimeter | TESMEN TM-510 | 1 | Voltage, resistance and continuity testing | TBD |
-| Display module | TBD | TBD | User interface | TBD |
-| Diodes | BAT 46 | 2 | RF detector experiments | TBD |
-| Capacitors | 100 pF to 10 μF | 2/2 | Filtering and decoupling | TBD |
-| Resistors | 10 to 1M Ω | 120 | Biasing, filtering and protection | TBD |
-| Antenna/wire | TBD | TBD | RF pickup experiments | TBD |
-| Power source | TBD | TBD | Prototype power | TBD |
+| ESP32 development board | ESP32 DEVKIT V1 | 3 | Processing, ADC and serial output | Not yet tested |
+| Breadboard | Full-size solderless breadboard | 1 | Prototype construction | Yes |
+| Multimeter | TESMEN TM-510 | 1 | Voltage, resistance and continuity testing | Yes |
+| Display module | None currently available | 0 | Final user interface | N/A |
+| Diodes | BAT46 Schottky diode | 2 | RF detector experiments | Not yet tested |
+| Capacitors | Assorted, 100 pF to 10 µF | 2 of each value | Filtering and decoupling | Not individually tested |
+| Resistors | Assorted, 10 Ω to 1 MΩ | 120 total | Biasing, filtering and protection | Not individually tested |
+| Antenna/wire | Jumper wire / hook-up wire | Assorted | RF pickup experiments | Yes |
+| Power source | Laptop USB through micro-USB cable | 1 | Prototype power | Not yet tested with ESP32 |
 
 ## 6. Planned Validation Order
 
