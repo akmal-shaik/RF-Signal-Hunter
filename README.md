@@ -1,27 +1,70 @@
 # RF Signal Hunter
 
-RF Signal Hunter is a handheld relative RF activity detector designed to demonstrate the complete engineering lifecycle of an embedded hardware product.
+A handheld device for detecting and displaying relative changes in nearby RF activity.
 
-The instrument will use a broadband analogue detector front end to convert nearby RF activity into a measurable low-frequency voltage. An ESP32 will sample, process and display this relative activity level.
+The project combines an analogue RF envelope detector with an ESP32, signal processing, data logging and a future handheld interface.
 
-The device is intended as an educational and portfolio instrument for observing changes in local RF activity. It is not a spectrum analyser, calibrated RF power meter, frequency counter or transmitter identification device.
+> This is a relative activity detector, not a spectrum analyser, frequency counter or calibrated RF power meter.
 
 ## Current Status
-v0.3 Breadboard Prototype — in progress
 
-Validated:
-- v0.1 requirements baseline
-- v0.2 system architecture
-- TEST-ESP-001 ESP32 serial bring-up
+The ESP32 development environment and serial communication have been verified.
 
 Current work:
-- ESP32 ADC characterisation
 
-## Repository Navigation
-- [Requirements](docs/requirements.md)
-- [System Architecture](docs/system_architecture.md)
-- [Design Decisions](docs/design_decisions_log.md)
-- [Engineering Log](docs/engineering_log.md)
-- [Release Notes](RELEASE_NOTES.md)
-- [Firmware](firmware/)
-- [Test Results](results/)
+* Characterising the ESP32 ADC
+* Developing the analogue detector
+* Measuring detector noise and response
+* Preparing for breadboard integration
+
+## Planned Signal Path
+
+```text
+RF pickup → envelope detector → filtering/protection
+          → ESP32 ADC → signal processing → display/serial output
+```
+
+## Technology
+
+* ESP32 DEVKIT V1
+* C++ with the Arduino ESP32 framework
+* PlatformIO
+* Analogue RF electronics
+* Python for measurement analysis
+* KiCad for the future PCB
+
+## Repository
+
+```text
+docs/       Short design overview
+firmware/   ESP32 PlatformIO project
+results/    Useful experimental evidence
+```
+
+## Build Firmware
+
+Install PlatformIO, then run:
+
+```bash
+cd firmware
+pio run
+```
+
+Upload to the ESP32:
+
+```bash
+pio run --target upload
+```
+
+## Progress
+
+* [x] Project concept defined
+* [x] ESP32 firmware environment configured
+* [x] Firmware upload verified
+* [x] Serial communication verified
+* [ ] ESP32 ADC characterised
+* [ ] RF detector breadboard prototype
+* [ ] Integrated handheld prototype
+* [ ] PCB and enclosure
+
+More technical detail is available in [`docs/design.md`](docs/design.md).
