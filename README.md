@@ -62,7 +62,7 @@ pio run --target upload
 * [x] ESP32 firmware environment configured
 * [x] Firmware upload verified
 * [x] Serial communication verified
-* [ ] ESP32 ADC characterised
+* [x] ESP32 ADC characterised
 * [ ] RF detector breadboard prototype
 * [ ] Integrated handheld prototype
 * [ ] PCB and enclosure
